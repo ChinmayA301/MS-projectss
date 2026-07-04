@@ -1,6 +1,7 @@
 import requests
+import os
 
-api_key = "your_tikapi_key"
+api_key = os.environ["TIKAPI_KEY"]
 url = "https://api.tikapi.io/trending?region=US"
 
 headers = {"Authorization": f"Bearer {api_key}"}
