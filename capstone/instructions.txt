@@ -1,0 +1,98 @@
+#open powershell window
+
+#configure proxy settings
+PS C:\Users\rmcewan> $env:HTTP_PROXY = "http://ctsigate.ahc.umn.edu:3128"
+PS C:\Users\rmcewan> $env:HTTPS_PROXY = "http://ctsigate.ahc.umn.edu:3128"
+
+#cd to your project folder 
+PS C:\Users\rmcewan> Q:
+PS Q:\> cd .\Test_Privs\Workspace\
+PS Q:\Test_Privs\Workspace> 
+
+#check python version, want >=3.x
+PS Q:\Test_Privs\Workspace> py -V 
+
+#create virtual env and wait - this takes some time
+#venv MUST be created in a project folder, NOT on the Window Desktop, nor anywhere else on C:\
+#https://docs.python.org/3/library/venv.html
+PS Q:\Test_Privs\Workspace> py -m venv jupyter_env
+
+#activate venv, choose A when prompted
+PS Q:\Test_Privs\Workspace> .\jupyter_env\Scripts\Activate.ps1
+
+#install Jupyter notebook with pip - this also takes some time
+#https://jupyter.org/install
+(jupyter_env) PS Q:\Test_Privs\Workspace> pip install jupyter
+
+#install required packages, e.g. pandas
+(jupyter_env) PS Q:\Test_Privs\Workspace> pip install pandas
+
+#launch notebook, browser will automatically launch the notebook
+#you have the option of scraping the notebook URL from the console output 
+#and pasting it into a different browser than the one that launches 
+(jupyter_env) PS Q:\Test_Privs\Workspace> jupyter notebook
+
+
+#perform your python/jupyter work here....
+
+#Ctrl-c to quit
+(jupyter_env) PS Q:\Test_Privs\Workspace> ctrl-c
+
+conda env create -f environment.yml
+
+conda activate geosdoh-env
+
+python -m ipykernel install --user --name geosdoh-env --display-name "GeoSDOH Environment"
+
+jupyter lab
+
+
+
+alt env.yml- 
+name: geosdoh-env
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ---- Core Python ----
+  - python=3.10
+  - pip
+  - ipykernel
+  - jupyterlab
+  - notebook
+
+  # ---- Data & EDA ----
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+
+  # ---- Modeling ----
+  - scikit-learn
+  - statsmodels
+
+  # ---- ML Models ----
+  - xgboost
+
+  # ---- Interpretability ----
+  - shap
+
+  # ---- Survival Modeling ----
+  - lifelines
+
+  # ---- Spatial/GIS ----
+  - geopandas
+  - contextily
+  - pyproj
+  - shapely
+  - rtree   # spatial indexing (optional but useful)
+
+  # ---- Performance / IO ----
+  - pyarrow
+  - tqdm
+
+  # ---- Pip-only installs ----
+  - pip:
+      - folium        # interactive spatial maps (optional)
+      - mapclassify   # classification for choropleths

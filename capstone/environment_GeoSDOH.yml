@@ -1,0 +1,22 @@
+name: geosdoh-light
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - ipykernel
+  - jupyterlab
+  - notebook
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - statsmodels
+  - xgboost
+  - shap
+  - lifelines
+  - pyarrow
+  - tqdm

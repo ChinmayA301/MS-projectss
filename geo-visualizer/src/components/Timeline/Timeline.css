@@ -1,0 +1,159 @@
+.timeline {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  padding: 10px 24px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ─── Year display ────────────────────── */
+.timeline__year-display {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 0 48px;
+}
+
+.timeline__year {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  min-width: 120px;
+}
+
+.timeline__era-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ─── Controls row ────────────────────── */
+.timeline__controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ─── Play button ─────────────────────── */
+.timeline__play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.timeline__play-btn:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+  box-shadow: 0 0 12px rgba(235, 172, 35, 0.2);
+}
+
+/* ─── Track ───────────────────────────── */
+.timeline__track {
+  flex: 1;
+  height: 24px;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.timeline__era-band {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0.15;
+  transition: opacity var(--transition-fast);
+}
+
+.timeline__track:hover .timeline__era-band {
+  opacity: 0.25;
+}
+
+.timeline__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, hsla(38, 80%, 55%, 0.2) 0%, hsla(38, 80%, 55%, 0.4) 100%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.timeline__thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-accent);
+  box-shadow: 0 0 10px rgba(235, 172, 35, 0.5), 0 0 20px rgba(235, 172, 35, 0.2);
+  pointer-events: none;
+  transition: box-shadow var(--transition-fast);
+}
+
+.timeline__track:hover .timeline__thumb {
+  box-shadow: 0 0 14px rgba(235, 172, 35, 0.7), 0 0 28px rgba(235, 172, 35, 0.3);
+}
+
+/* ─── Speed ───────────────────────────── */
+.timeline__speed {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.timeline__speed-btn {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.timeline__speed-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.timeline__speed-btn--active {
+  color: var(--text-accent);
+  border-color: var(--border-glow);
+  background: hsla(38, 80%, 55%, 0.08);
+}
+
+.timeline__speed-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

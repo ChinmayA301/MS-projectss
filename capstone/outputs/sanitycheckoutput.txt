@@ -1,0 +1,92 @@
+patient_id                 encounter_date  \
+count                           85748285                       85748285   
+unique                             20006                            NaN   
+top     66296C47D663A8A4648EE1CB460FF51F                            NaN   
+freq                             2795802                            NaN   
+mean                                 NaN  2018-08-29 08:32:59.298180864   
+min                                  NaN            2015-12-03 00:00:00   
+25%                                  NaN            2017-06-08 00:00:00   
+50%                                  NaN            2018-09-15 00:00:00   
+75%                                  NaN            2019-11-13 00:00:00   
+max                                  NaN            2021-01-29 00:00:00   
+std                                  NaN                            NaN   
+
+                      result_datetime   hba1c_value result_unit           age  \
+count                         8978117  8.839133e+06     8977832  8.574828e+07   
+unique                            NaN           NaN           4           NaN   
+top                               NaN           NaN           %           NaN   
+freq                              NaN           NaN     8977821           NaN   
+mean    2018-06-02 12:42:22.110795008  7.550046e+00         NaN  6.487904e+01   
+min               2015-04-21 00:00:00  0.000000e+00         NaN  1.800000e+01   
+25%               2017-01-20 05:52:00  6.500000e+00         NaN  5.800000e+01   
+50%               2018-05-23 07:55:00  7.300000e+00         NaN  6.500000e+01   
+75%               2019-11-18 05:54:00  8.400000e+00         NaN  7.200000e+01   
+max               2022-10-07 13:09:00  2.110000e+02         NaN  1.160000e+02   
+std                               NaN  1.563396e+00         NaN  1.205896e+01   
+
+             sex   adi_natrank  adi_state_rank  \
+count   85748285  8.574828e+07             0.0   
+unique         3           NaN             NaN   
+top            M           NaN             NaN   
+freq    54048676           NaN             NaN   
+mean         NaN  4.381373e+01             NaN   
+min          NaN  2.000000e+00             NaN   
+25%          NaN  3.100000e+01             NaN   
+50%          NaN  4.200000e+01             NaN   
+75%          NaN  5.300000e+01             NaN   
+max          NaN  1.000000e+02             NaN   
+std          NaN  1.776617e+01             NaN   
+
+                                               rural_desc    rural_flag  \
+count                                            85748285  8.574828e+07   
+unique                                                  9           NaN   
+top     Metro - Counties in metro areas of 1 million p...           NaN   
+freq                                             71685142           NaN   
+mean                                                  NaN  2.698252e-02   
+min                                                   NaN  0.000000e+00   
+25%                                                   NaN  0.000000e+00   
+50%                                                   NaN  0.000000e+00   
+75%                                                   NaN  0.000000e+00   
+max                                                   NaN  1.000000e+00   
+std                                                   NaN  1.620323e-01   
+
+        uncontrolled  
+count   8.574828e+07  
+unique           NaN  
+top              NaN  
+freq             NaN  
+mean    6.244078e-02  
+min     0.000000e+00  
+25%     0.000000e+00  
+50%     0.000000e+00  
+75%     0.000000e+00  
+max     1.000000e+00  
+std     2.419544e-01  
+
+Missingness (%):
+adi_state_rank     1.000000
+hba1c_value        0.896918
+result_unit        0.895300
+result_datetime    0.895297
+patient_id         0.000000
+encounter_date     0.000000
+sex                0.000000
+age                0.000000
+adi_natrank        0.000000
+rural_desc         0.000000
+rural_flag         0.000000
+uncontrolled       0.000000
+dtype: float64
+uncontrolled
+0    0.937559
+1    0.062441
+Name: proportion, dtype: float64
+count    8.574828e+07
+mean     4.381373e+01
+std      1.776617e+01
+min      2.000000e+00
+25%      3.100000e+01
+50%      4.200000e+01
+75%      5.300000e+01
+max      1.000000e+02
+Name: adi_natrank, dtype: float64
